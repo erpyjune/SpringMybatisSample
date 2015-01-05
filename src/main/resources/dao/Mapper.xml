@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Mapper.java namespace -->
+<mapper namespace="dao.Mapper">
+    <!-- Person.java namespace -->
+    <resultMap type="dao.Search" id="Search">
+        <!-- map table "search"column to class "Search" property -->
+        <id column="dataId"         property="id"/>
+        <result property="productName" column="product_name"/>
+    </resultMap>
+
+    <select id="selectAllDatas" resultMap="Search">
+        SELECT id, product_name FROM search
+    </select>
+</mapper>
